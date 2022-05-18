@@ -1,0 +1,19 @@
+Assignment 1: The below program is to Roll the Dice
+
+
+import random
+def generateRandomNumber(maxLimit):
+    generatedNumber = random.randint(1, maxLimit)
+    return generatedNumber 
+
+
+def main():
+    maxLimit = 6
+    readyToRoll = True
+    while readyToRoll :
+        userInput = input("Ready to roll? Enter Q to Quit")
+        if userInput.lower() !="q":
+            rolledNumber = generateRandomNumber(maxLimit)
+            print("You have rolled a",rolledNumber)
+        else:
+            readyToRoll = False
