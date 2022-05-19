@@ -1,0 +1,31 @@
+Assignment 1: The below program is to guess the correct number between 1 to 100
+
+def checkUserInput(userInput):
+    if userInput.isdigit() and 1<= int(userInput) <=100:
+        return True
+    else:
+        return False
+
+def main():
+    generatedRandomNumber = random.randint(1,100)
+    enableTheInput = False
+    userInput = input("Guess a number between 1 and 100:")
+    numberOfGuess = 0
+    while not enableTheInput:
+        if not checkUserInput(userInput):
+            userInput = input("I wont count this one Please enter a number between 1 to 100")
+            continue
+        else:
+            numberOfGuess+=1
+            userInput = int(userInput)
+
+        if userInput < generatedRandomNumber:
+            userInput = input("Too low. Guess again")
+        elif userInput > generatedRandomNumber:
+            userInput = input("Too High. Guess again")
+        else:
+            print("You guessed it in",numberOfGuess,"guesses!")
+            enableTheInput = True
+
+
+main()
