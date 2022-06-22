@@ -1,0 +1,23 @@
+interface rateOfInterests {
+    public void calculateForBelowFifty(amount);
+    public void calculateForBelowHundred(amount);
+    public void calculateForBelowThreeHundred(amount);
+}
+
+public class interestForBelowFifty implements rateOfInterests {
+     public void calculateForBelowFifty(amount) {
+        return amount + (15 / 100 * amount);
+    }
+}
+
+public class interestForBelowHundred implements rateOfInterests {
+     public void calculateForBelowHundred(amount) {
+        return amount + (10 / 100 * amount);
+    }
+}
+
+public class interestForBelowThreeHundred implements rateOfInterests {
+     public void calculateForBelowThreeHundred(amount) {
+        return amount + (5 / 100 * amount);
+    }
+}
