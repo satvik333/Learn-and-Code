@@ -18,7 +18,9 @@ def main():
         else:
             numberOfGuess+=1
             userInput = int(userInput)
-
+            checForTheResult(userInput, generatedRandomNumber)
+            
+def checkForTheResult(userInput, generatedRandomNumber):
         if userInput < generatedRandomNumber:
             userInput = input("Too low. Guess again")
         elif userInput > generatedRandomNumber:
