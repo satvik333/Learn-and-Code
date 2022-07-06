@@ -6,17 +6,17 @@ using System.Numerics;
 class floor {
     static void Main(string[] args) {
        var numberOfElementsAndQuery = Array.ConvertAll(Console.ReadLine().Split(' '), int.Parse);
-            var integerArray = Array.ConvertAll(Console.ReadLine().Split(' '), long.Parse);
-            long[] sumOfArray = new long[numberOfElementsAndQuery[0] + 1];
-            sumOfArray [0] = 0;
-            for (int i = 1; i <= numberOfElementsAndQuery[0]; i++)
-            {
-                sumOfArray[i] = sumOfArray[i - 1] + integerArray[i - 1];
-            }
-            for (var x = 0; x < numberOfElementsAndQuery[1]; x++)
-            {
-                var leftAndRightIndices = Array.ConvertAll(Console.ReadLine().Split(' '), int.
-                Console.WriteLine((long)((long)(sumOfArray[leftAndRightIndices[1]] - sumOfArray[leftAndRightIndices[0] - 1]) / (leftAndRightIndices[1] - leftAndRightIndices[0] + 1)));
-            }
+       var integerArray = Array.ConvertAll(Console.ReadLine().Split(' '), long.Parse);
+       long[] sumOfArray = new long[numberOfElementsAndQuery[0] + 1];
+       sumOfArray[0] = 0;
+       for (int index = 1; index <= numberOfElementsAndQuery[0]; index++)
+          {
+             sumOfArray[index] = sumOfArray[index - 1] + integerArray[index - 1];
+          }
+       for (var x = 0; x < numberOfElementsAndQuery[1]; x++)
+          {
+             var leftAndRightIndices = Array.ConvertAll(Console.ReadLine().Split(' '), int.
+             Console.WriteLine((long)((long)(sumOfArray[leftAndRightIndices[1]] - sumOfArray[leftAndRightIndices[0] - 1]) / (leftAndRightIndices[1] leftAndRightIndices[0] + 1)));
+          }
     }
 }
