@@ -1,0 +1,65 @@
+Class Employee {
+  string name; 
+  int age; 
+  float salary; 
+  public : string getName(); 
+  void setName(string name); 
+  int getAge(); 
+  void setAge(int age); 
+  float getSalary(); 
+  void setSalary(float salary); 
+}; 
+
+Employee employee; 
+
+1 Is 'employee' an object or a data structure? Why?
+ANS: 'employee' is not a data structure it is an object.Employee is a class and a class is a syntactic way to group data and methods. 
+Data structure means the way of arranging the data into the memory and it only deals with the data not with the functions.
+Here in the above example Employee contains both the data and functions. And basically class does not belongs to the data structure. 
+
+2.Look at the below classes and the client code given below on how the object are used and methods invoked. Is there a better way to write the Customer class? 
+ 
+public class Customer { 
+  private String firstName; 
+  private String lastName; 
+  private Wallet myWallet; 
+  public String getFirstName() {
+     return firstName; 
+    } 
+  public String getLastName() { 
+    return lastName; 
+  }
+  public Wallet getWallet() { 
+    return myWallet; 
+  } 
+}
+
+public class Wallet { 
+  private float value; 
+  public float getTotalMoney() { 
+    return value; 
+  }
+  public void setTotalMoney(float newValue) { 
+    value = newValue; 
+  } 
+  public void addMoney(float deposit) { 
+    value += deposit; 
+  } 
+  public void subtractMoney(float debit) { 
+    value -= debit; 
+  } 
+} 
+Client code…. assuming some delivery boy wants to get his payment 
+// code from some method inside the delivery boy class... payment = 2.00; 
+// “I want my two dollars!” 
+Wallet theWallet = myCustomer.getWallet(); 
+if (theWallet.getTotalMoney() > payment) { 
+  theWallet.subtractMoney(payment); 
+} 
+else { 
+// come back later and get my money 
+System.out.pritln("come back later and get my money");
+}
+
+ANS:
+I guess here the Customer class is fine and I did not get any better way to re-write it.
