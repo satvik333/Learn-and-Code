@@ -1,0 +1,43 @@
+import requests
+import json
+
+blogUrlName = input('Enter blog URL')
+postStart = int(input('Enter the post Start Range'))
+postEnd =  int(input('Enter the post End Range'))
+
+blogUrl = hitForBlobUrlApi(blogUrlName, postStart, postEnd)
+filterRequiredData(getResponceFromUrl(blogUrl))
+
+#making API call
+def hitForBlobUrlApi(blogUrlName, postStart, postEnd):
+
+    #Tumblr API v1 URL
+    return "https://{urlName}.tumblr.com/api/read/json?type=photo&num={end}&start={start}".format(urlName=blogUrlName, start=postStart, end=postEnd)
+
+def getResponceFromUrl(url):
+    
+    #calling the get API
+    responseData = requests.get(url)
+
+    #removing the extra data from API response
+    filteredresponseData = responseData.text.strip()[22:-1]
+
+    #coverting filtered data into dictionary
+    return json.loads(filteredresponseData)
+
+
+def filterRequiredData(responceData):
+    print('title :'+responceData['tumblelog']['title'])
+    print('name :'+responceData['tumblelog']['name'])
+    print('description :'+responceData['tumblelog']['description'])
+    print('no of post :',responceData['posts-total'])
+    
+    #filtering for 1280px photos
+    for post in responceData['posts']:
+        print(post["photo-url-1280"])
+        for photos in post['photos']:
+            print(photos["photo-url-1280"])
+
+
+
+
