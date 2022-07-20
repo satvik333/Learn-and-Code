@@ -11,7 +11,7 @@ filterRequiredData(getResponceFromUrl(blogUrl))
 #making API call
 def hitForBlobUrlApi(blogUrlName, postStart, postEnd):
 
-    #Tumblr API v1 URL
+    #Tumblr API(key) v1 URL
     return "https://{urlName}.tumblr.com/api/read/json?type=photo&num={end}&start={start}".format(urlName=blogUrlName, start=postStart, end=postEnd)
 
 def getResponceFromUrl(url):
