@@ -1,0 +1,36 @@
+import socket
+import sys
+ 
+try:
+    socketPort = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+except socket.error as err:
+    print ("Cannot connect to the Server" %(err))
+port = 80
+try:
+    host_ip = socket.gethostbyname('www.ATM.com')
+except socket.gaierror:
+    print ("There was an error occurred while connecting to the serv er")
+    sys.exit()
+socketPort.connect((host_ip, port))
+
+print("Welcome To The ATM")
+attempts = 0
+while attempts <= 3:
+    userPin = int(input("Enter your 4 digit pin number: "))
+    balance = 25000
+    userInput = 0
+    
+    if (userPin == 1234):
+        userInput = int(input("Please Enter the amount"))
+    else:
+        attempts+=1
+        
+    if (attempts >= 3):
+        raise Exception("Sorry, Card has been blocked due to invalid pin attempts ")
+    
+    if (userInput > 25000):
+        print("Insufficient balance")
+        
+    if (userInput <= 25000 and userInput > 0):
+        print("Please collect the Cash")
+        break;
