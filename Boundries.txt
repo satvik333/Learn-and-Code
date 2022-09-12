@@ -1,13 +1,10 @@
-Integrate Geocoding API in your application:  
+from geopy.geocoders import Nominatim
 
-Get API reference from: https://developers.google.com/maps/documentation/javascript/geocoding
+geolocator = Nominatim(user_agent="MyApp")
 
-Create a simple console application where 
-User will give place as an input and you need to return latitude and longitude of that place and show it in application. 
+locationName = input("Enter the location: ")
 
-Example: 
-UserInput: SilkBoard 
+location = geolocator.geocode(locationName)
 
-Output: 
-Latitude: 12.9177
-Longitude:  77.6238
+print("Latitude: %.4f"%location.latitude)
+print("Longitude: %.4f"%location.longitude)
