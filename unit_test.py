@@ -9,13 +9,18 @@ for i in range(noOfInputs):
 findingNo = int(input("Enter the num to find"))
 
 def findTheNumber(arr, findingNo):
-    arr = arr.sort()
-    for i in arr:
-        if(i == findingNo):
-            return i
+    arr = [1,3,5,7]
+    arr.sort()
+    for i in range(len(arr)+1):
+        if(arr[i] == findingNo):
+            return arr[i]
         else:
-            return arr[min(range(len(arr)), key = lambda i: abs(arr[i]-findingNo))]
-      
+            newArr.append(abs(arr[i]-findingNo))
+            idx = newArr.index(min(newArr))
+            return arr[idx]
+
+            
+    
 
 
 
