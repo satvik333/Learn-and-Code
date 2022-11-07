@@ -19,11 +19,6 @@ def findTheNumber(arr, findingNo):
             idx = newArr.index(min(newArr))
             return arr[idx]
 
-            
-    
-
-
-
 findTheNumber(arr,findingNo)
 
 import unittest
