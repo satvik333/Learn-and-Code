@@ -9,7 +9,6 @@ for i in range(noOfInputs):
 findingNo = int(input("Enter the num to find"))
 
 def findTheNumber(arr, findingNo):
-    arr = [1,3,5,7]
     arr.sort()
     for i in range(len(arr)+1):
         if(arr[i] == findingNo):
